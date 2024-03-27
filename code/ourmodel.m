@@ -115,7 +115,7 @@ close all;
     
     G1=zeros(r,c);
 
-    % calculate local correlation feature(LCF)
+    % calculate similar: improved local correlation feature(L*) in paper
     rid = 5;
     for i=1:r
         for j=1:c
