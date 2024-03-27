@@ -114,8 +114,10 @@ close all;
     nu1 = 0.001*255*255; 
     
     G1=zeros(r,c);
-     rid = 5;
-     for i=1:r
+
+    % calculate local correlation feature(LCF)
+    rid = 5;
+    for i=1:r
         for j=1:c
             temp5=0;
             for x=i-rid:i+rid
@@ -127,8 +129,8 @@ close all;
                 end
             end
             G1(i,j) = temp5;
-         end
-     end
+        end
+    end
     G2 =  ( G1 - min(min(G1)) )./ ( max(max(G1)) -  min(min(G1)) );
      
     similar = 1 - G2;
@@ -237,7 +239,6 @@ close all;
 
     hold off;
     
- %% º∆À„diceœ‡À∆∂»
 % groundtruth = mat2gray(groundtruth);
 % 
 % similarity = dice(double(im2bw(-phi)),double(im2bw(groundtruth)));
