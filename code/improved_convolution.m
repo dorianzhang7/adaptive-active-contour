@@ -1,6 +1,8 @@
+% Customized multi-core convolution
+
 function [ Kout ] = improved_convolution( I,Ksigma,Ki,Kj)
-%   ´Ë´¦ÏÔÊ¾ÏêÏ¸ËµÃ÷
-% À©³ä±ß½ç,rad±íÊ¾¾í»ıºËµÄ³¤¶È
+%   æ­¤å¤„æ˜¾ç¤ºè¯¦ç»†è¯´æ˜
+% æ‰©å……è¾¹ç•Œ,radè¡¨ç¤ºå·ç§¯æ ¸çš„é•¿åº¦
 rad = size(Ksigma,1);
 r = (rad-1)/2;
 
@@ -10,7 +12,7 @@ if (Ki-r <1 || Kj-r <1 || Ki+r>size(I,1) || Kj+r>size(I,2))
     myF(r+1:(size(I, 1) + r),r+1:(size(I, 2) + r)) = I;
     myF(r+1:(size(I, 1) + r),(size(I, 2) + r+1):(size(I, 2) + 2*r)) = 0;
     myF((size(I, 1) + r+1):(size(I, 1) + 2*r), 1:(size(I, 2) + 2*r)) = 0;
-    % À©³äÍê±ß½çºó£¬¸üĞÂÏÂ±ê
+    % æ‰©å……å®Œè¾¹ç•Œåï¼Œæ›´æ–°ä¸‹æ ‡
     Ki = Ki + r;
     Kj = Kj + r;
     Kout = 0;
