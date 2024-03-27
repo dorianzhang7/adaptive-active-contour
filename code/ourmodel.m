@@ -211,6 +211,7 @@ close all;
         fitting_term = -D.*F;                % fitting term;
         penal_term = mu.*(4*del2(phi)-K);    % penalizing term, proposed in Chunming Li's paper: 
 
+    % a novel adaptive connection coefficient s
     % medical image
         s = exp(-0.2.*(maxIter/k));  
 
